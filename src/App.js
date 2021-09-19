@@ -2,35 +2,32 @@ import './App.css';
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { getData } from './actions/nasa'
-import PhotoCard from './components/Card';
-
+import Home from './components/pages/Home';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends Component {
+
   componentDidMount(){
     this.props.getData()
   }
-    state = {
-      like: 1
-    }
-
-  handleChange = (event) => {
-    this.setState({like: event.target.value})
-  }
 
   render(){
-    return(
-      <div>
-      <div className="cards">
-        {this.props.photos.map(nasa => nasa.photos.map(data => <PhotoCard photo={data} likeInc={this.state.like}/>))}
-      </div>
-      </div>
-       )
+    return (
+      <Router>
+        {/* <Navbar /> */}
+        <Switch>
+          <Route path='/' exact component={Home} />
+        </Switch>
+      </Router>
+    );
   }
 }
+
 const mapStateToProps = (state) => {
   return{
     photos: state.photos,
     loading: state.loading
   }
 }
+
 export default connect(mapStateToProps, { getData })(App);
