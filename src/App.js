@@ -9,8 +9,6 @@ class App extends Component {
   componentDidMount(){
     this.props.getData()
   }
-
-
     state = {
       like: 0
     }
@@ -22,7 +20,7 @@ class App extends Component {
   render(){
     return(
       <div className="cards">
-        {this.props.photos.map((photo) => (<PhotoCard photo={photo} />))}
+        {this.props.photos.map(nasa => nasa.photos.map(data => <PhotoCard photo={data} />))}
       </div>
        )
   }
