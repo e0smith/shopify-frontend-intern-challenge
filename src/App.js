@@ -10,7 +10,7 @@ class App extends Component {
     this.props.getData()
   }
     state = {
-      like: 0
+      like: 1
     }
 
   handleChange = (event) => {
@@ -19,8 +19,10 @@ class App extends Component {
 
   render(){
     return(
+      <div>
       <div className="cards">
-        {this.props.photos.map(nasa => nasa.photos.map(data => <PhotoCard photo={data} />))}
+        {this.props.photos.map(nasa => nasa.photos.map(data => <PhotoCard photo={data} likeInc={this.state.like}/>))}
+      </div>
       </div>
        )
   }
