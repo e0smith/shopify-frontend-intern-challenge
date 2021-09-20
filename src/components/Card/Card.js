@@ -1,9 +1,12 @@
-import '../../App.css';
+import '../../styling/App.css';
+import '../../styling/Like.css';
 import React from 'react';
 import { Component } from 'react';
-import './Like.css'
+import { FacebookIcon, LinkedinIcon, RedditIcon, TwitterIcon, TelegramIcon} from 'react-share';
+import { FacebookShareButton, LinkedinShareButton, RedditShareButton, TwitterShareButton, TelegramShareButton } from 'react-share'
 
-class PhotoCard extends Component {
+
+export default class PhotoCard extends Component {
 
     constructor(props){
         super(props);
@@ -13,18 +16,7 @@ class PhotoCard extends Component {
         }
     }
 
-
-    // state = { 
-    //     like: 0,
-    //     updated: false
-    // }
-
-    // handleChange(event){
-    //     this.setState({like: event.target.value})
-    // }
-
     updateLikes = () => {
-
         if(!this.state.updated) {
           this.setState((prevState) => {
             return {
@@ -32,22 +24,17 @@ class PhotoCard extends Component {
               updated: true
             };
           });
-    
         } else {
-    
           this.setState((prevState) => {
             return {
               likes: prevState.likes - 1,
               updated: false
             };
           });
-    
         }
-      }
+    }
 
     render() {
-
-        console.log(this.props.photo)
         const { img_src, earth_date} = this.props.photo
         const { name: cameraName } = this.props.photo.camera
         const { name: roverName } = this.props.photo.rover
@@ -69,7 +56,26 @@ class PhotoCard extends Component {
 
                         <p> {this.state.likes} Likes</p>
                         <p>{this.likeButton()}</p>
-                        {/* {<button onClick={() => this.setState({like: this.state.like + parseInt(this.props.likeInc)})}> Like </button>} */}
+
+                        <FacebookShareButton url={img_src}>
+                            <FacebookIcon size={32} round={true} />
+                        </FacebookShareButton>
+
+                        <LinkedinShareButton url={img_src}>
+                            <LinkedinIcon size={32} round={true} />
+                        </LinkedinShareButton>
+
+                        <RedditShareButton url={img_src}>
+                            <RedditIcon size={32} round={true} />
+                        </RedditShareButton>
+
+                        <TwitterShareButton url={img_src}>
+                            <TwitterIcon size={32} round={true} />
+                        </TwitterShareButton>
+
+                        <TelegramShareButton url={img_src}>
+                            <TelegramIcon size={32} round={true} />
+                        </TelegramShareButton>
                     </div>
                 </div>
             </div>
@@ -129,5 +135,3 @@ class PhotoCard extends Component {
         )
     }
 }
-
-export default PhotoCard;
