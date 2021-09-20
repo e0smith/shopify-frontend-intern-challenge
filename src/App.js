@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { getData } from './actions/nasa'
 import Home from './components/pages/Home';
+import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
   render(){
     return (
       <Router>
-        {/* <Navbar /> */}
+        <Navbar />
         <Switch>
           <Route path='/' exact component={Home} />
         </Switch>
