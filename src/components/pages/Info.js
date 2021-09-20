@@ -22,7 +22,7 @@ export default class Info extends Component {
                 
                 <p id="i-p"> Hosted by GitHub</p>
                 
-                <h2> Myself </h2>
+                <h2 id="i-h2"> Myself </h2>
                 
                 <p id="i-p"> I am recent graduate of the Flatiron Schools Full-Stack Software Engineering Bootcamp</p>
                 
