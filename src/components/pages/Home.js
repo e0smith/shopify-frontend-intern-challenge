@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PhotoCard from '../card/Card'
+import PhotoCard from '../Card'
 
 class Home extends Component {
     render(){
