@@ -1,8 +1,5 @@
 import '../../styling/Info.css'
-// import { LinkedinIcon, GithubIcon } from 'react-share';
-// import { LinkedinShareButton, GithubShareButton } from 'react-share'
 import { Component } from 'react';
-// import { Link } from 'react-router-dom';
 
 
 
@@ -27,6 +24,8 @@ export default class Info extends Component {
                 <p id="i-p"> I am recent graduate of the Flatiron Schools Full-Stack Software Engineering Bootcamp</p>
                 
                 <p id="i-p"> Technologies include: Ruby, Rails, SQL, JavaScript, React, Redux, Git, CSS, HTML </p>
+
+                <p id="i-p"> You can find me on <a href="https://www.linkedin.com/in/edwardsmithsilvia/">Linkedin</a> and <a href="https://github.com/e0smith">GitHub</a></p>
             </div>
         )
     }

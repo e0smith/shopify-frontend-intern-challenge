@@ -6,22 +6,22 @@
 }
 
 #i-h1 {
-    font-size: 90px;
+    font-size: 80px;
     color: black;
     margin-top: 40px;
 }
 
 #i-h2 {
-    font-size: 60px;
+    font-size: 50px;
     color: black;
-    margin-top: 80px;
+    margin-top: 40px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 20px;
 }
 
 #i-p {
-    font-size: 40px;
+    font-size: 20px;
     color: black;
     margin-top: 10px;
     margin-left: 5px;

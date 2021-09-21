@@ -5,10 +5,13 @@ import { getData } from './actions/nasa'
 import Home from './components/pages/Home';
 import Navbar from './components/Navbar';
 import Info from './components/pages/Info';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 class App extends Component {
-
   componentDidMount(){
     this.props.getData()
   }
@@ -18,7 +21,7 @@ class App extends Component {
       <Router>
         <Navbar />
         <Switch>
-          <Route to='/' exact component={Home} />
+          <Route path='/' exact component={Home} />
           <Route path='/info' exact component={Info} />
         </Switch>
       </Router>
@@ -27,9 +30,9 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return{
-    photos: state.photos,
-    loading: state.loading
+  return {
+      photos: state.photos,
+      loading: state.loading
   }
 }
 

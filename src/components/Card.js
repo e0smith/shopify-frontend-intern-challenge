@@ -1,10 +1,20 @@
 import '../styling/App.css';
-// import '../../styling/Like.css';
-import React from 'react';
+import React, { Component } from 'react';
 import Heart from 'react-animated-heart';
-import { Component } from 'react';
-import { FacebookIcon, LinkedinIcon, RedditIcon, TwitterIcon, TelegramIcon} from 'react-share';
-import { FacebookShareButton, LinkedinShareButton, RedditShareButton, TwitterShareButton, TelegramShareButton } from 'react-share';
+import {
+    FacebookIcon,
+    LinkedinIcon,
+    RedditIcon,
+    TwitterIcon,
+    TelegramIcon
+} from 'react-share';
+import {
+    FacebookShareButton,
+    LinkedinShareButton,
+    RedditShareButton,
+    TwitterShareButton,
+    TelegramShareButton
+} from 'react-share';
 
 export default class PhotoCard extends Component {
 
@@ -36,24 +46,29 @@ export default class PhotoCard extends Component {
     }
 
     render() {
-        const { img_src, earth_date} = this.props.photo
+        const { img_src, earth_date } = this.props.photo
         const { name: cameraName } = this.props.photo.camera
-        const { name: roverName } = this.props.photo.rover
+        const { name: roverName, landing_date, launch_date } = this.props.photo.rover
         return(
             <div id="c-body">
                 <div id="card-container">
                     <div class="card">
+                        
+                        <div class="name">{roverName}</div>
+
+                        <p>{earth_date}</p>
+
                         <img src={img_src} id="c-img" alt="..."/>
                         
                         <span class="tag">NASA</span>
 
                         <span class="tag">Mars</span>
 
-                        <div class="name">{roverName}</div>
+                        <p>Camera: {cameraName}</p>
 
-                        <p>{cameraName}</p>
+                        <p>Launched on {launch_date}</p>
 
-                        <p>{earth_date}</p>
+                        <p>Landed on {landing_date}</p>
 
                         <p> {this.state.likes} Likes</p>
                         
